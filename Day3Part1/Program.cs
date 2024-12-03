@@ -1,0 +1,1 @@
+﻿Console.WriteLine(File.ReadAllLines("input.txt").Select(static line => System.Text.RegularExpressions.Regex.Matches(line, @"mul\([0-9]*,[0-9]*\)").Select(match => match.Value.Split("(")[1].Split(")")[0].Split(",").Aggregate(1, (acc, it) => acc * int.Parse(it))).Sum()).Sum());
